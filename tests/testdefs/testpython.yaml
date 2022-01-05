@@ -13,7 +13,9 @@ metadata:
         - manu.gupta@arm.com    
 install:
     git-repos:
-        -  https://github.com/mangup01/lava_poc.git
+        -  git://github.com/mangup01/lava_poc.git
+    steps:
+        - 'wget https://github.com/mangup01/lava_poc/blob/main/tests/scripts/hello.py'
 run:
     steps:
-        - python3 ../scripts/hello.py 
+        - python3 hello.py 
