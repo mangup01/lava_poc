@@ -1,0 +1,42 @@
+# Standard Jessie amd64 JOB definition for QEMU
+device_type: qemu
+job_name: qemu-amd64-standard-buster
+timeouts:
+  job:
+    minutes: 10
+  action:
+    minutes: 2
+priority: medium
+visibility: public
+context:
+  arch: amd64
+actions:
+- deploy:
+    timeout:
+      minutes: 5
+    to: tmpfs
+    images:
+        rootfs:
+          image_arg: -drive format=qcow2,file={rootfs}
+          url: https://images.validation.linaro.org/people.linaro.org/~remi.duraffort/qemu-images-2020-09-10/debian-buster.qcow2.zst
+          compression: zstd
+    os: debian
+    root_partition: 1
+- boot:
+    method: qemu
+    timeout:
+      minutes: 2
+    media: tmpfs
+    prompts:
+    - "root@debian:"
+    auto_login:
+      login_prompt: "login:"
+      username: root
+- test:
+    timeout:
+      minutes: 4
+   definitions:
+    - repository: https://git.research.arm.com/gpu-tia/lava_poc.git
+      from: git
+      path: tests/test_case1.yaml
+      name: test_logic1
