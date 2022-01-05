@@ -36,7 +36,7 @@ actions:
     timeout:
       minutes: 4
    definitions:
-    - repository: https://git.research.arm.com/gpu-tia/lava_poc.git
+    - repository: 
       from: git
-      path: tests/test_case1.yaml
-      name: test_logic1
+      path: tests/testdefs/instpython.yaml
+      name: test_installpython

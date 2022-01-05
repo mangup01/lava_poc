@@ -1,7 +1,12 @@
 metadata:
     format: Lava-Test Test Definition 1.0
-    name: testlogic1
+    name: test_installpython
     description: "python installation"
+    os:
+      - debian
+    scope:
+      - functional
+
     maintainer:
         - manu.gupta@arm.com    
 run:
