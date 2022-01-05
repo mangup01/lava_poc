@@ -15,7 +15,7 @@ install:
     git-repos:
         -  git://github.com/mangup01/lava_poc.git
     steps:
-        - 'wget https://github.com/mangup01/lava_poc/blob/main/tests/scripts/hello.py'
+        - 'wget https://raw.githubusercontent.com/mangup01/lava_poc/main/tests/scripts/hello.py'
 run:
     steps:
         - python3 hello.py 
