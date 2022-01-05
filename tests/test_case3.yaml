@@ -1,0 +1,10 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: testlogic1
+    description: "python installation"
+    maintainer:
+        - manu.gupta@arm.com    
+run:
+    steps:
+        - apt -q -y install python3.7 
+        - ls -la /usr/bin/python*
