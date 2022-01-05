@@ -36,7 +36,11 @@ actions:
     timeout:
       minutes: 4
    definitions:
-    - repository: 
+    - repository: https://github.com/mangup01/lava_poc.git
       from: git
       path: tests/testdefs/instpython.yaml
       name: test_installpython
+    - repository: https://github.com/mangup01/lava_poc.git
+      from: git
+      path: tests/testdefs/testpython.yaml
+      name: test_python

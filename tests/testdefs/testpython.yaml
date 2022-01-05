@@ -1,0 +1,19 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: test_python
+    description: "python installation"
+    os:
+      - debian
+    scope:
+      - functional
+    devices:
+      - qemu
+
+    maintainer:
+        - manu.gupta@arm.com    
+install:
+    git-repos:
+        -  https://github.com/mangup01/lava_poc.git
+run:
+    steps:
+        - python3 ../scripts/hello.py 
